@@ -2,11 +2,21 @@ let menu = document.querySelector("#menu-bars");
 let navbar = document.querySelector("#navbar");
 let search = document.querySelector("#search-form");
 let modes = document.querySelector("#mode");
-const backend_url =
-  "https://news-backend-rtpv.onrender.com" || "http://localhost:3000";
-modes.onclick = () => {
+const backend_url = "http://localhost:3000";
+// modes.onclick = () => {
+//   modes.classList.toggle("fa-sun");
+// };
+
+function toggleLoader(show) {
+  const loaderContainer = document.querySelector(".loader-container");
+  loaderContainer.style.display = show ? "flex" : "none";
+}
+
+modes.addEventListener("click", toggleTheme);
+function toggleTheme() {
   modes.classList.toggle("fa-sun");
-};
+  document.body.classList.toggle("dark-mode");
+}
 
 menu.onclick = () => {
   menu.classList.toggle("fa-times");
@@ -60,7 +70,7 @@ var newsDataArr = [];
 
 // apis
 const API_KEY = "a72388c8cf0b4cfda52ae93316344f93";
-const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
+// const SEARCH_NEWS = "https://newsapi.org/v2/everything?q=";
 
 genralBtn.addEventListener("click", function () {
   newsType.innerHTML = "<h4>General news</h4>";
@@ -93,125 +103,183 @@ searchBtn.addEventListener("click", function () {
 });
 
 const fetchHeadlines = async () => {
-  const response = await fetch(backend_url + "/news/headlines");
-  newsDataArr = [];
-  if (response.status >= 200 && response.status < 300) {
-    const myJson = await response.json();
-    newsDataArr = myJson.articles;
-  } else {
-    // handle errors
-    console.log(response.status, response.statusText);
+  try {
+    toggleLoader(true);
+
+    const response = await fetch(backend_url + "/news/headlines");
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+      const myJson = await response.json();
+      newsDataArr = myJson.articles;
+    } else {
+      // handle errors
+      console.log(response.status, response.statusText);
+      newsdetails.innerHTML = "<h5>No data found.</h5>";
+      return;
+    }
+
+    displayNews();
+  } catch (error) {
     newsdetails.innerHTML = "<h5>No data found.</h5>";
     return;
+  } finally {
+    toggleLoader(false);
   }
-
-  displayNews();
 };
 
 const fetchGeneralNews = async () => {
-  const response = await fetch(backend_url + "/news/general");
-  newsDataArr = [];
-  if (response.status >= 200 && response.status < 300) {
-    const myJson = await response.json();
-    newsDataArr = myJson.articles;
-  } else {
-    // handle errors
-    console.log(response.status, response.statusText);
+  try {
+    toggleLoader(true);
+    const response = await fetch(backend_url + "/news/general");
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+      const myJson = await response.json();
+      newsDataArr = myJson.articles;
+    } else {
+      // handle errors
+      console.log(response.status, response.statusText);
+      newsdetails.innerHTML = "<h5>No data found.</h5>";
+      return;
+    }
+    displayNews();
+  } catch (error) {
     newsdetails.innerHTML = "<h5>No data found.</h5>";
     return;
+  } finally {
+    toggleLoader(false);
   }
-
-  displayNews();
 };
 
 const fetchBusinessNews = async () => {
-  const response = await fetch(backend_url + "/news/business");
-  newsDataArr = [];
-  if (response.status >= 200 && response.status < 300) {
-    const myJson = await response.json();
-    newsDataArr = myJson.articles;
-  } else {
-    // handle errors
-    console.log(response.status, response.statusText);
+  try {
+    toggleLoader(true);
+
+    const response = await fetch(backend_url + "/news/business");
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+      const myJson = await response.json();
+      newsDataArr = myJson.articles;
+    } else {
+      // handle errors
+      console.log(response.status, response.statusText);
+      newsdetails.innerHTML = "<h5>No data found.</h5>";
+      return;
+    }
+
+    displayNews();
+  } catch (error) {
     newsdetails.innerHTML = "<h5>No data found.</h5>";
     return;
+  } finally {
+    toggleLoader(false);
   }
-
-  displayNews();
 };
 
 const fetchSportsNews = async () => {
-  const response = await fetch(backend_url + "/news/sports");
-  newsDataArr = [];
-  if (response.status >= 200 && response.status < 300) {
-    const myJson = await response.json();
-    newsDataArr = myJson.articles;
-  } else {
-    // handle errors
-    console.log(response.status, response.statusText);
+  try {
+    toggleLoader(true);
+
+    const response = await fetch(backend_url + "/news/sports");
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+      const myJson = await response.json();
+      newsDataArr = myJson.articles;
+    } else {
+      // handle errors
+      console.log(response.status, response.statusText);
+      newsdetails.innerHTML = "<h5>No data found.</h5>";
+      return;
+    }
+
+    displayNews();
+  } catch (error) {
     newsdetails.innerHTML = "<h5>No data found.</h5>";
     return;
+  } finally {
+    toggleLoader(false);
   }
-
-  displayNews();
 };
 
 const fetchTechnologyNews = async () => {
-  const response = await fetch(backend_url + "/news/tech");
-  newsDataArr = [];
-  if (response.status >= 200 && response.status < 300) {
-    const myJson = await response.json();
-    newsDataArr = myJson.articles;
-  } else {
-    // handle errors
-    console.log(response.status, response.statusText);
+  try {
+    toggleLoader(true);
+    const response = await fetch(backend_url + "/news/tech");
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+      const myJson = await response.json();
+      newsDataArr = myJson.articles;
+    } else {
+      // handle errors
+      console.log(response.status, response.statusText);
+      newsdetails.innerHTML = "<h5>No data found.</h5>";
+      return;
+    }
+
+    displayNews();
+  } catch (error) {
     newsdetails.innerHTML = "<h5>No data found.</h5>";
     return;
+  } finally {
+    toggleLoader(false);
   }
-
-  displayNews();
 };
 
 const fetchEntertainmentNews = async () => {
-  const response = await fetch(backend_url + "/news/entertainment");
-  newsDataArr = [];
-  if (response.status >= 200 && response.status < 300) {
-    const myJson = await response.json();
-    console.log(myJson);
-    newsDataArr = myJson.articles;
-  } else {
-    // handle errors
-    console.log(response.status, response.statusText);
+  try {
+    toggleLoader(true);
+    const response = await fetch(backend_url + "/news/entertainment");
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+      const myJson = await response.json();
+      console.log(myJson);
+      newsDataArr = myJson.articles;
+    } else {
+      // handle errors
+      console.log(response.status, response.statusText);
+      newsdetails.innerHTML = "<h5>No data found.</h5>";
+      return;
+    }
+
+    displayNews();
+  } catch (error) {
     newsdetails.innerHTML = "<h5>No data found.</h5>";
     return;
+  } finally {
+    toggleLoader(false);
   }
-
-  displayNews();
 };
 
 const fetchQueryNews = async () => {
-  if (newsQuery.value == null) return;
+  try {
+    toggleLoader(true);
+    if (newsQuery.value == null) return;
 
-  const response = await fetch(
-    SEARCH_NEWS + encodeURIComponent(newsQuery.value) + "&apiKey=" + API_KEY
-  );
-  console.log(
-    await fetch(
+    const response = await fetch(
       SEARCH_NEWS + encodeURIComponent(newsQuery.value) + "&apiKey=" + API_KEY
-    )
-  );
-  newsDataArr = [];
-  if (response.status >= 200 && response.status < 300) {
-    const myJson = await response.json();
-    newsDataArr = myJson.articles;
-  } else {
-    //error handle
-    console.log(response.status, response.statusText);
+    );
+    console.log(
+      await fetch(
+        SEARCH_NEWS + encodeURIComponent(newsQuery.value) + "&apiKey=" + API_KEY
+      )
+    );
+    newsDataArr = [];
+    if (response.status >= 200 && response.status < 300) {
+      const myJson = await response.json();
+      newsDataArr = myJson.articles;
+    } else {
+      //error handle
+      console.log(response.status, response.statusText);
+      newsdetails.innerHTML = "<h5>No data found.</h5>";
+      return;
+    }
+
+    displayNews();
+  } catch (error) {
     newsdetails.innerHTML = "<h5>No data found.</h5>";
     return;
+  } finally {
+    toggleLoader(false);
   }
-
-  displayNews();
 };
 
 function displayNews() {

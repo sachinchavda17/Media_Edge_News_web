@@ -64,45 +64,45 @@ header #navbar a:hover {
     letter-spacing: .05rem;
 }
 
-header .icons #menu-bars{
+header .icons #menu-bars {
     display: none;
 }
 
-header .icons div{
-    color:var(--black) ;
+header .icons div {
+    color: var(--black);
     cursor: pointer;
-    font-size: 1.4rem ;
+    font-size: 1.4rem;
     margin-left: 1.2rem;
     background-color: var(--dark-white);
-    border-radius: 50% ;
-    line-height: 3rem ;
-    width: 3rem ;
+    border-radius: 50%;
+    line-height: 3rem;
+    width: 3rem;
     text-align: center;
 }
 
-header .icons div:hover{
+header .icons div:hover {
     background: var(--black);
     color: var(--white);
     transform: rotate(360deg);
 }
 
-header .icons span select{
-    width: 6rem ;
-    height: 3rem ;
+header .icons span select {
+    width: 6rem;
+    height: 3rem;
     margin-left: 1.2rem;
     border: 1px solid black;
     border-radius: 10%;
 }
 
- /* search form  */
+/* search form  */
 
-#search-form{
+#search-form {
     position: absolute;
-    top: 115% ;
-    right: 7% ;
+    top: 115%;
+    right: 7%;
     background-color: #fff;
-    width: 50rem ;
-    height: 5rem ;
+    width: 50rem;
+    height: 5rem;
     display: flex;
     align-items: center;
     border: .05rem solid var(--light-color);
@@ -111,30 +111,31 @@ header .icons span select{
     transform-origin: top;
 }
 
-#search-form.active{
+#search-form.active {
     transform: scaleY(1);
 }
- 
-#search-form input{
+
+#search-form input {
     height: 100%;
     width: 100%;
-    font-size: 1.6rem ;
+    font-size: 1.6rem;
     color: var(--black);
     padding: .7rem;
-    margin: .2rem ;
+    margin: .2rem;
     text-transform: none;
     border: none;
     outline: none;
 }
 
 
-#search-form label{
-    font-size: 2rem ;
+#search-form label {
+    font-size: 2rem;
     cursor: pointer;
-    margin-right: 1.2rem ;
+    margin-right: 1.2rem;
     color: black
 }
-#search-form label:hover{
+
+#search-form label:hover {
     color: var(--black);
 }
 
@@ -142,18 +143,18 @@ header .icons span select{
 
 #mainNews {
     position: relative;
-    top: -7000rem  ;
+    top: -7000rem;
     display: none;
 }
 
-#mainNews.active{
-    top: 7rem ;
+#mainNews.active {
+    top: 7rem;
     display: inline-block;
 }
 
 #mainNews #newsType {
     font-size: 2rem;
-    margin: 0 1rem 2rem 2rem  ;
+    margin: 0 1rem 2rem 2rem;
 }
 
 
@@ -197,13 +198,13 @@ header .icons span select{
 .card .para .newsImg:hover {
     cursor: pointer;
     transform: scale(1.03);
-    padding-bottom: 1rem ;
+    padding-bottom: 1rem;
 }
 
 .card .para .card-title {
     margin: .25rem 0;
     margin-top: 0;
-    font-size: 2rem ;
+    font-size: 2rem;
 }
 
 .card .para .date {
@@ -212,12 +213,14 @@ header .icons span select{
     color: rgb(13, 110, 253);
     margin: 0.25rem 0;
 }
+
 .card .para .descript {
     padding: 1rem 0;
     font-size: 1.5rem;
     margin: 0.25rem 0;
     line-height: 1.2;
 }
+
 .card .para .btn {
     font-size: 1.7rem;
     border-radius: 0.5rem;
@@ -231,69 +234,69 @@ header .icons span select{
     letter-spacing: 0.06rem;
 }
 
-h5{
-    font-size: 2rem ;
+h5 {
+    font-size: 2rem;
 }
 
 /* sign-in form  */
 
 #sign-in {
     position: absolute;
-    width: 32rem  ;
-    padding: 1.4rem 3rem ;
+    width: 32rem;
+    padding: 1.4rem 3rem;
     border: .1rem solid rgba(0, 0, 0, .2);
     border-radius: .5rem;
     background: var(--dark-white);
-    top:-100% ;
-    left: 38% ;
+    top: -100%;
+    left: 38%;
     box-shadow: var(--box-shadow);
     display: none;
 }
 
-#sign-in.active{
-    top:25% ;
+#sign-in.active {
+    top: 25%;
     display: inline-block;
 }
 
-#sign-in h2{
+#sign-in h2 {
     text-align: center;
-    font-size:4rem ;
-    margin-bottom: 4rem ;
+    font-size: 4rem;
+    margin-bottom: 4rem;
     color: var(--black);
 }
 
 #sign-in input,
-#sign-in #submit{
+#sign-in #submit {
     border: none;
     outline: none;
     display: block;
 }
 
 #sign-in input {
-    width: 100% ;
+    width: 100%;
     text-align: center;
     background-color: transparent;
-    margin-bottom: 2rem ;
-    font-size: 2rem ;
-    padding: 1rem 0 .5rem .5rem ;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    padding: 1rem 0 .5rem .5rem;
     border-bottom: 2px solid #202020;
 }
 
-#sign-in #submit{
+#sign-in #submit {
     position: relative;
     left: 0;
-    font-size: 1.1rem ;
-    width: 7rem ;
+    font-size: 1.1rem;
+    width: 7rem;
     background-color: var(--black);
     color: white;
-    padding: .8rem 0 ;
-    margin: 2rem 0 ;
-    border-radius: .3rem ;
+    padding: .8rem 0;
+    margin: 2rem 0;
+    border-radius: .3rem;
 }
 
-#sign-in #message-ref{
-    font-size: 1rem ;
-    margin-top: 1.5rem ;
+#sign-in #message-ref {
+    font-size: 1rem;
+    margin-top: 1.5rem;
     color: #34bd34;
     visibility: hidden;
 }
@@ -303,6 +306,7 @@ h5{
     top: 1rem;
     font-size: 2rem;
     right: 1.5rem;
+    cursor: pointer;
 }
 
 
@@ -326,27 +330,28 @@ h5{
 
 
 
-.loader-container{
+.loader-container {
     position: fixed;
-    top:0; left:0;
-    height:100%; 
-    width:100%;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
     z-index: 10000;
-    background:transparent;
+    background: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
 }
 
-.loader-container img{
-    width:5rem;
+.loader-container img {
+    width: 5rem;
 }
 
-.loader-container.fade-out{
+.loader-container.fade-out {
     /* top:-110%; */
     display: none;
-    opacity:0;
+    opacity: 0;
 }
 
 
@@ -367,9 +372,9 @@ h5{
         margin-bottom: 60px;
     }
 
-    #search-form{
-        width: 40rem ;
-        height: 4rem ;
+    #search-form {
+        width: 40rem;
+        height: 4rem;
     }
 
 }
@@ -398,14 +403,14 @@ h5{
         margin: 1rem;
         font-size: 2rem;
     }
-    
-    header .icons #menu-bars{
+
+    header .icons #menu-bars {
         display: inline-block;
     }
 
-    #search-form{
-        width: 30rem ;
-        height: 4rem ;
+    #search-form {
+        width: 30rem;
+        height: 4rem;
     }
 
     #mainNews #newsdetails {
@@ -413,7 +418,7 @@ h5{
     }
 
     #sign-in {
-        left: 34% ;
+        left: 34%;
     }
 
 }
@@ -428,21 +433,22 @@ h5{
     #mainNews #newsdetails {
         grid-template-columns: repeat(1, 1fr);
     }
+
     #sign-in {
-        left: 20% ;
+        left: 20%;
     }
 
-    #search-form{
-        width: 85%  ;
-        height: 4rem ;
+    #search-form {
+        width: 85%;
+        height: 4rem;
     }
 
 }
 
-@media (max-width:350px ) {
+@media (max-width:350px) {
 
     #sign-in {
-        left: 10% ;
+        left: 10%;
     }
 
 }

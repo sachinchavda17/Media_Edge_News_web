@@ -74,6 +74,16 @@ app.get('/news/entertainment', async (req, res) => {
     res.status(500).json({ error: 'Internal server error' });
   }
 });
+app.post('/news/entertainment', async (req, res) => {
+  try {
+    const response = await fetch(`${ENTERTAINMENT_NEWS}${API_KEY}`);
+    const data = await response.json();
+    res.json(data);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: 'Internal server error' });
+  }
+});
 
 
 
